@@ -31,7 +31,7 @@ export const index = async (req: Request, res: Response) => {
 export const show = async (req: Request, res:Response) => {
 	const { productId } = req.params
 	try{
-		const product = await prisma.product.findUniqueOrthrow({
+		const product = await prisma.product.findUniqueOrThrow({
 			where: {
 				id: Number(productId)
 			}

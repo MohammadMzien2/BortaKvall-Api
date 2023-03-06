@@ -32,7 +32,7 @@ export const index = async (req: Request, res: Response) => {
 export const show = async(req: Request, res: Response) => {
 	const { oderId } = req.params
 	try{
-		const order = await prisma.order.findUniqueOrthrow({
+		const order = await prisma.order.findUniqueOrThrow({
 			where: {
 				id: Number(oderId)
 			}, include: {

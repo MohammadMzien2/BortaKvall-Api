@@ -26,7 +26,7 @@ router.post('/', [
 	body('customer_postcode').isString().isLength({ max: 6 }).withMessage('has to be a string and cant be longer than 6 chars'),
 	body('customer_city').isString().withMessage('has to be a string'),
 	body('customer_email').isString().isEmail().withMessage('has to be a string'),
-	body('customer_phone').optional().isString().isLength({ max: 20 }).withMessage('has to be a string'),
+	body('customer_phone').isString().isLength({ max: 20 }).withMessage('has to be a string'),
 	body('order_total').isInt().withMessage('has to be a number'),
 	body('order_items.*.product_id').isInt({ min: 1 }).bail().withMessage('has to be a number and at least 1 '),
 	body('order_items.*.qty').isInt({ min: 1 }).bail().withMessage('has to be a number and not 0'),
